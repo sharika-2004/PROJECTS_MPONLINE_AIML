@@ -1,0 +1,27 @@
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+y_pred_probs = model.predict(X_val, verbose=0)
+y_pred = (y_pred_probs > 0.5).astype(int).flatten()
+
+acc = accuracy_score(y_val, y_pred)
+prec = precision_score(y_val, y_pred)
+rec = recall_score(y_val, y_pred)
+f1 = f1_score(y_val, y_pred)
+cm = confusion_matrix(y_val, y_pred)
+
+print(f"Accuracy:  {acc * 100:.2f}%")
+print(f"Precision: {prec * 100:.2f}%")
+print(f"Recall:    {rec * 100:.2f}%")
+print(f"F1 Score:  {f1 * 100:.2f}%")
+print("\nConfusion Matrix:")
+print(cm)
+
+plt.figure(figsize=(10, 4))
+plt.plot(history.history['accuracy'], label='Train Accuracy', color='blue')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy', color='orange')
+plt.title('Model Accuracy Performance')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.grid(True)
+plt.show()
