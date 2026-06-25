@@ -16,3 +16,13 @@ model.compile(
 )
 
 model.summary()
+
+EPOCHS = 5
+BATCH_SIZE = 32
+
+history = model.fit(
+    X_train, y_train,
+    validation_data=(X_val, y_val),
+    epochs=EPOCHS,
+    batch_size=BATCH_SIZE
+)
