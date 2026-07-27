@@ -51,7 +51,7 @@ This project trains a PPO agent to solve the environment and evaluates its perfo
 
 | Metric | Value |
 |---|---|
-| Mean evaluation reward | ~235.31 +/- 66.03 |
+| Mean evaluation reward | 235.31 +/- 66.03 |
 | Training time (Colab CPU) | ~15–30 minutes |
 | Timesteps to convergence | ~600,000–1,000,000 |
 
